@@ -6,10 +6,10 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.current {
-  display: block;
+.slider {
+  width: 70%;
+  margin-left: 15%;
 }
-
 .slide {
   width: 100%;
   height: 80vh;
@@ -19,5 +19,11 @@ body {
   object-fit: cover;
   width: 100%;
   height: 100%;
-  transition: all 0.3s ease-in-out;
+}
+
+.control {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
 }

@@ -20,11 +20,39 @@ document.addEventListener("DOMContentLoaded", function () {
     const activeRadio = state.nextSlide(currentSlide);
     const radios = document.getElementsByName("slider-control");
     radios[activeRadio].checked = true;
+    slideImage.animate(
+      [
+        { opacity: "1" },
+        { opacity: "0" },
+        { opacity: "0" },
+        { opacity: "0" },
+        { opacity: "0" },
+        { opacity: "1" },
+      ],
+      {
+        duration: 1000,
+      }
+    );
+    slideImage.animate(
+      [
+        // keyframes
+        { transform: "translateX(0%)" },
+        { transform: "translateX(-50%)" },
+        { transform: "translateX(-100%)" },
+        { transform: "translateX(50%)" },
+        { transform: "translateX(100%)" },
+        { transform: "translateX(0%)" },
+      ],
+      {
+        // timing options
+        duration: 1000,
+      }
+    );
     slideImage.src = `assets/images/${state.slides[state.currentSlide]}`;
   };
   displaySlide();
   // auto slider
   setInterval(() => {
     displaySlide();
-  }, 2000);
+  }, 5000);
 });
